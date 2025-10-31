@@ -1,0 +1,38 @@
+/*Idee*/
+body {
+  display: flex;
+  max-width: 1024px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 10px solid brown;
+}
+
+.out {
+  border: none;
+}
+
+.img-container {
+  border: 1px solid black;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center; /*horizontaal*/
+  align-items: center; /*verticaal*/
+}
+.wall {
+  padding: 0;
+}
+
+.img-container.enemy,
+.player,
+.treasure,
+.img-container:empty {
+  background-color: greenyellow;
+}
+
+img {
+  max-width: 100%; /*niet groter dan beschikbare ruimte*/
+}
