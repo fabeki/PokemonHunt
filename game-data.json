@@ -3,36 +3,48 @@
     "name": "Pikachu",
     "type": "treasure",
     "worth": "rare",
-    "icon": "pikachu.png"
+    "icon": "pikachu.png",
+    "alt": "Pikachu icon",
+    "title": "Pikachu icon created by Roundicons Freebies - Flaticon"
   },
   {
     "name": "Charmander",
     "type": "treasure",
     "worth": "common",
-    "icon": "charmander.png"
+    "icon": "charmander.png",
+    "alt": "Charmander icon",
+    "title": "Charmander icon created by Roundicons Freebies - Flaticon"
   },
   {
     "name": "Squirtle",
     "type": "treasure",
     "worth": "common",
-    "icon": "squirtle.png"
+    "icon": "squirtle.png",
+    "alt": "Squirtle icon",
+    "title": "Squirtle icon created by Roundicons Freebies - Flaticon"
   },
   {
     "name": "Bullbasaur",
     "type": "treasure",
     "worth": "common",
-    "icon": "bullbasaur.png"
+    "icon": "bullbasaur.png",
+    "alt": "Bullbasaur icon",
+    "title": "Bullbasaur icon created by Roundicons Freebies - Flaticon"
   },
   {
     "name": "",
     "type": "player",
     "lives": 3,
-    "icon": "pokemon-trainer.png"
+    "icon": "pokemon-trainer.png",
+    "alt": "Pokemon trainer icon",
+    "title": "Pokemon trainer icon created by Nikita Goluben - Flaticon"
   },
   {
     "name": "Meowth",
     "type": "enemy",
     "speed": 3,
-    "icon": "meowth.png"
+    "icon": "meowth.png",
+    "alt": "Meowth icon",
+    "title": "Meowth icon created by Roundicons Freebies - Flaticon"
   }
 ]
