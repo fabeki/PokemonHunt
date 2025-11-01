@@ -44,6 +44,25 @@ header h2 {
   width: auto;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: aquamarine;
+}
+
+li {
+  list-style-type: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 footer {
   font-size: 0.5rem;
   color: #ffcb08;
