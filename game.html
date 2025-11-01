@@ -3,119 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script type="module" src="js/game.js" defer></script>
     <title>Pokemon Hunt</title>
     <link rel="icon" href="img/pokemon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- attribute to owners-->
     <div class="container">
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container player"><img src="img/pokemon-trainer.png" alt="Pokemon trainer icon" title="Pokemon trainer icon created by Nikita Goluben - Flaticon" /></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container enemy"><img src="img/meowth.png" alt="Meowth icon" title="Meowth icon created by Roundicons Freebies - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container treasure"><img src="img/bullbasaur.png" alt="Bullbasaur icon" title="Bullbasaur icon created by Roundicons Freebies - Flaticon" /></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container treasure"><img src="img/charmander.png" alt="Charmander icon" title="Charmander icon created by Roundicons Freebies - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container treasure"><img src="img/squirtle.png" alt="Squirtle icon" title="Squirtle icon created by Roundicons Freebies - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container treasure"><img src="img/pikachu.png" alt="Pikachu icon" title="Pikachu icon created by Roundicons Freebies - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-      <div class="img-container wall"><img src="img/wall.png" alt="Wall icon" title="Brick icon created by Freepik - Flaticon" /></div>
-      <div class="img-container"></div>
-      <div class="img-container"></div>
-    </div>
-    <div class="container out">
-      <div class="img-container"><img src="img/pokeball-empty.png" alt="Empty pokeball icon" title="Empty pokeball created by Darius Dan - Flaticon" /></div>
-      <div class="img-container"><img src="img/pokeball.png" alt="Pokeball icon" title="Pokeball icon created by Those Icons - Flaticon" /></div>
-      <div class="img-container"><img src="img/game.png" alt="Health icon" title="Game icon created by Roundicons Premium - Flaticon" /></div>
-      <div class="img-container"><img src="img/cogwheel.png" alt="Settings icon" title="Cogwheel icon created by Freepik - Flaticon" /></div>
+      <header>
+        <div class="header-logo"><img src="img/pokemon-seeklogo.png" alt="Pokemon logo" title="Pokemon - Seeklogo" /></div>
+        <div class="header-title"><h2>Pokemon Hunt</h2></div>
+        <div class="header-settings">
+          <button class="btn-settings"><img src="img/cogwheel.png" alt="Settings icon" title="Cogwheel icon created by Freepik - Flaticon" /></button>
+        </div>
+      </header>
+      <main>
+        <div id="notFound" hidden class="error">Not Found</div>
+        <div class="main-container"></div>
+      </main>
+      <footer>Copyright &copy; 2025 Fatima Kilicaslan</footer>
     </div>
   </body>
 </html>
