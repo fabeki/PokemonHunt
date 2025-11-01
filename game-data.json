@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Pikachu",
+    "type": "treasure",
+    "worth": "rare",
+    "icon": "pikachu.png"
+  },
+  {
+    "name": "Charmander",
+    "type": "treasure",
+    "worth": "common",
+    "icon": "charmander.png"
+  },
+  {
+    "name": "Squirtle",
+    "type": "treasure",
+    "worth": "common",
+    "icon": "squirtle.png"
+  },
+  {
+    "name": "Bullbasaur",
+    "type": "treasure",
+    "worth": "common",
+    "icon": "bullbasaur.png"
+  },
+  {
+    "name": "",
+    "type": "player",
+    "lives": 3,
+    "icon": "pokemon-trainer.png"
+  },
+  {
+    "name": "Meowth",
+    "type": "enemy",
+    "speed": 3,
+    "icon": "meowth.png"
+  }
+]
