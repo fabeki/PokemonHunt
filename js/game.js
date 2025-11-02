@@ -2,6 +2,11 @@
 
 const notFoundDiv = document.getElementById("notFound");
 const mainContainer = document.querySelector(".main-container");
+const statusDiv = document.getElementById("status");
+const livesSpan = document.getElementById("lives");
+livesSpan.innerHTML = "";
+const collectedSpan = document.getElementById("collected");
+collectedSpan.innerHTML = "";
 
 /* MAAK GAMEBOARD */
 class Board {
@@ -83,7 +88,6 @@ class Board {
   /* TOON HET BORD EN VUL DE HTML CELLEN */
   render(mainContainer) {
     mainContainer.innerHTML = ""; //Maak opnieuw voor elke spel
-
     for (let y = 0; y < this.#heigth; y++) {
       const rowDiv = document.createElement("div");
       rowDiv.classList.add("row");
@@ -111,7 +115,6 @@ class Board {
           img.alt = value.alt;
           img.title = value.title;
           img.classList.add(value.type);
-
           cellDiv.appendChild(img);
         }
         rowDiv.appendChild(cellDiv);
@@ -130,6 +133,24 @@ async function readData() {
     const data = await response.json();
     board.processData(data);
     board.render(mainContainer);
+    /* Levens tonen */
+    const playerData = data.find((object) => object.type === "player");
+    for (let i = 0; i < playerData.lives; i++) {
+      const img = document.createElement("img");
+      img.src = "/img/game.png";
+      img.alt = "Health icon";
+      img.title = "Game icon created by Roundicons Premium - Flaticon";
+      livesSpan.appendChild(img);
+    }
+    /* pokeballs tonen */
+    const treasuresLength = data.filter((object) => object.type === "treasure");
+    treasuresLength.forEach(() => {
+      const img = document.createElement("img");
+      img.src = "/img/pokeball-empty.png";
+      img.alt = "Empty pokeball icon";
+      img.title = "Empty pokeball created by Darius Dan - Flaticon";
+      collectedSpan.appendChild(img);
+    });
   } else {
     notFoundDiv.hidden = false;
   }
