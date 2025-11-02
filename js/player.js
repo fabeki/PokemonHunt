@@ -59,6 +59,12 @@ export class Player {
       default:
         return;
     }
+
+    // Kan niet buiten bord
+    if (x < 0 || x >= this.board.width || y < 0 || y >= this.board.heigth) {
+      return;
+    }
+
     //player moving
     const playerData = this.board.grid[this.position.y][this.position.x];
     this.board.grid[this.position.y][this.position.x] = null;
