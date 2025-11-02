@@ -27,10 +27,10 @@ class Board {
   get heigth() {
     return this.#heigth;
   }
-  /* enkel als je het buiten de klasse nodig hebt 
+
   get grid() {
     return this.#grid;
-  }*/
+  }
 
   #generateGrid() {
     for (let y = 0; y < this.#heigth; y++) {
