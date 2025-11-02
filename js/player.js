@@ -64,6 +64,10 @@ export class Player {
     if (x < 0 || x >= this.board.width || y < 0 || y >= this.board.heigth) {
       return;
     }
+    // muur obstakel
+    if (this.board.grid[y][x] === "wall") {
+      return;
+    }
 
     //player moving
     const playerData = this.board.grid[this.position.y][this.position.x];
