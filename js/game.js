@@ -1,4 +1,5 @@
 "use strict";
+import {Player} from "./player.js";
 
 const notFoundDiv = document.getElementById("notFound");
 const mainContainer = document.querySelector(".main-container");
@@ -158,4 +159,13 @@ async function readData() {
 
 /* PAS GEGEVENS AAN + SPEL STARTEN */
 const board = new Board(10, 10, 15);
-readData();
+/*
+readData(); <-- start het ophalen van JSON, maar doet dat pas over een paar milliseconden
+const player = new Player(board); <-- dit wordt direct uitgevoerd, WACHT NIET op readData
+Daarom kreeg ik in player.js geen this.position.
+*/
+async function startGame() {
+  await readData(); //wacht tot json geladen is
+  const player = new Player(board);
+}
+startGame();
