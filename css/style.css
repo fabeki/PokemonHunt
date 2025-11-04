@@ -98,13 +98,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 120px;
-  padding-bottom: 40px;
+  justify-content: center;
+  padding: 2em;
   box-sizing: border-box;
 }
 
 /* JAVASCRIPT CODE STYLEN (BOARD) */
+
 .main-container {
   display: inline-block; /*Neemt alleen de breedte v.d bord, block neemt de hele pagina breedte*/
   border: 3px solid BROWN;
@@ -153,4 +153,42 @@ main {
 #collected img {
   width: 40px;
   height: 40px;
+}
+
+.intro,
+#intro {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 3px solid #ffcb08;
+  border-radius: 15px;
+  padding: 2em;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffcb08;
+  box-shadow: 0 0 20px #000;
+}
+.intro h3,
+#intro h3 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+.intro p,
+#intro p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+
+#startBtn {
+  padding: 0.75em 2em;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffcb08;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+}
+
+#startBtn:hover {
+  background-color: #ffe066;
 }

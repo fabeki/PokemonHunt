@@ -4,7 +4,7 @@ import {Enemy} from "./enemy.js";
 
 const notFoundDiv = document.getElementById("notFound");
 const mainContainer = document.querySelector(".main-container");
-const statusDiv = document.getElementById("status");
+const statusDiv = document.querySelector(".status");
 const livesSpan = document.getElementById("lives");
 livesSpan.innerHTML = "";
 const collectedSpan = document.getElementById("collected");
@@ -163,4 +163,8 @@ async function startGame() {
   const player = new Player(board);
   const enemy = new Enemy(board);
 }
-startGame();
+
+document.getElementById("startBtn").addEventListener("click", () => {
+  document.getElementById("intro").style.display = "none";
+  startGame();
+});
