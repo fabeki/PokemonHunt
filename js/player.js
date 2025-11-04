@@ -56,13 +56,14 @@ export class Player {
         return;
     }
 
-    const playerData = this.board.grid[this.position.y][this.position.x];
-    const currentCell = this.board.grid[y][x];
-
-    // Kan niet buiten bord
+    // Kan niet buiten bord, 1. eerst grenzen controleren
     if (x < 0 || x >= this.board.width || y < 0 || y >= this.board.heigth) {
       return;
     }
+    //2. daarna cellen lezen (als buiten bord gaat bestaan de rijen niet daarom error)
+    const playerData = this.board.grid[this.position.y][this.position.x];
+    const currentCell = this.board.grid[y][x];
+
     // muur obstakel
     if (currentCell === "wall") {
       return;
