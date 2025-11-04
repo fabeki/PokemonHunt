@@ -71,16 +71,28 @@ export class Player {
       return;
     }
 
+    const livesSpan = document.getElementById("lives");
     //enemy
     if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "enemy") {
       if (playerData.dataObject.lives && playerData.dataObject.lives > 0) {
         playerData.dataObject.lives--;
         console.log(playerData.dataObject.lives);
-        const livesSpan = document.getElementById("lives");
         livesSpan.removeChild(livesSpan.lastChild);
         return;
       }
       return;
+    }
+
+    //collected treasures tonen
+    const collectedSpan = document.getElementById("collected");
+    console.log(collectedSpan);
+    const emptyTreasure = collectedSpan.querySelector('img[src="/img/pokeball-empty.png"]');
+    if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "treasure") {
+      if (emptyTreasure) {
+        emptyTreasure.src = "/img/pokeball.png";
+        emptyTreasure.alt = "Pokeball icon";
+        emptyTreasure.title = "Pokeball icon created by Those Icons - Flaticon";
+      }
     }
 
     //player moving
