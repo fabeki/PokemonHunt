@@ -62,17 +62,11 @@ class Board {
   /* PLAATS DE JSON OBJECTEN IN HET BORD */
   processData(dataJSON) {
     dataJSON.forEach((data) => {
-      if (data.type === "player") {
-        this.#placeJSONData("player", data.icon, data.title, data.alt);
-      } else if (data.type === "enemy") {
-        this.#placeJSONData("enemy", data.icon, data.title, data.alt);
-      } else if (data.type === "treasure") {
-        this.#placeJSONData("treasure", data.icon, data.title, data.alt);
-      }
+      this.#placeJSONData(data);
     });
   }
 
-  #placeJSONData(type, icon, title, alt) {
+  #placeJSONData(dataObject) {
     let placed = false;
 
     while (!placed) {
@@ -80,7 +74,7 @@ class Board {
       const y = Math.floor(Math.random() * this.#heigth);
 
       if (this.#grid[y][x] === null) {
-        this.#grid[y][x] = {type, icon, title, alt};
+        this.#grid[y][x] = {dataObject};
         placed = true;
       }
     }
@@ -98,7 +92,6 @@ class Board {
         cellDiv.classList.add("cell");
 
         const value = this.#grid[y][x];
-
         if (value === null) {
           cellDiv.style.backgroundColor = "greenyellow";
         } else if (value === "wall") {
@@ -112,10 +105,10 @@ class Board {
         } else if (typeof value === "object") {
           cellDiv.style.backgroundColor = "greenyellow";
           const img = document.createElement("img");
-          img.src = "/img/" + value.icon;
-          img.alt = value.alt;
-          img.title = value.title;
-          img.classList.add(value.type);
+          img.src = "/img/" + value.dataObject.icon;
+          img.alt = value.dataObject.alt;
+          img.title = value.dataObject.title;
+          img.classList.add(value.dataObject.type);
           cellDiv.appendChild(img);
         }
         rowDiv.appendChild(cellDiv);
