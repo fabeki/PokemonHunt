@@ -7,7 +7,6 @@ export class Player {
 
     /* Waar staat de player? */
     this.position = this.findPlayerPosition();
-    console.log(this.position);
 
     /* https://javascript.info/keyboard-events */
     document.addEventListener("keydown", (event) => {
@@ -18,11 +17,9 @@ export class Player {
   /* Functie zoek plaats van player */
   findPlayerPosition() {
     for (let y = 0; y < this.board.heigth; y++) {
-      console.log(this.board.heigth);
       for (let x = 0; x < this.board.width; x++) {
-        console.log(this.board.width);
         const cellValue = this.board.grid[y][x];
-        if (cellValue && cellValue.type === "player") {
+        if (typeof cellValue === "object" && cellValue && cellValue.dataObject.type === "player") {
           // sommige cellen hebben "null" voorkom error
           return {x, y};
         }
@@ -60,17 +57,33 @@ export class Player {
         return;
     }
 
+    const playerData = this.board.grid[this.position.y][this.position.x];
+    const currentCell = this.board.grid[y][x];
+    console.log(playerData);
+    console.log(currentCell);
+
     // Kan niet buiten bord
     if (x < 0 || x >= this.board.width || y < 0 || y >= this.board.heigth) {
       return;
     }
     // muur obstakel
-    if (this.board.grid[y][x] === "wall") {
+    if (currentCell === "wall") {
+      return;
+    }
+
+    //enemy
+    if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "enemy") {
+      if (playerData.dataObject.lives && playerData.dataObject.lives > 0) {
+        playerData.dataObject.lives--;
+        console.log(playerData.dataObject.lives);
+        const livesSpan = document.getElementById("lives");
+        livesSpan.removeChild(livesSpan.lastChild);
+        return;
+      }
       return;
     }
 
     //player moving
-    const playerData = this.board.grid[this.position.y][this.position.x];
     this.board.grid[this.position.y][this.position.x] = null;
     this.board.grid[y][x] = playerData;
 
