@@ -4,6 +4,7 @@ export class Enemy {
   constructor(board) {
     this.board = board;
     this.position = this.findEnemyPosition();
+    this.Interval = null;
     this.startMoving();
   }
 
@@ -21,7 +22,7 @@ export class Enemy {
   }
 
   startMoving() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       //arrow function blijft gebonden aan klasse, anders zou ik this niet kunnen gebruiken
       this.moveRandom();
     }, 250);
@@ -52,6 +53,12 @@ export class Enemy {
 
       if (livesSpan.lastChild) {
         livesSpan.removeChild(livesSpan.lastChild);
+      }
+      //gameover
+      if (!livesSpan.hasChildNodes()) {
+        clearInterval(this.interval);
+        alert("Game Over. Meowth heeft je te pakken !");
+        return;
       }
 
       return;
