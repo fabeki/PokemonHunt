@@ -69,17 +69,6 @@ export class Player {
       return;
     }
 
-    const livesSpan = document.getElementById("lives");
-    //enemy
-    if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "enemy") {
-      if (playerData.dataObject.lives && playerData.dataObject.lives > 0) {
-        playerData.dataObject.lives--;
-        livesSpan.removeChild(livesSpan.lastChild);
-        return;
-      }
-      return;
-    }
-
     //collected treasures tonen
     const collectedSpan = document.getElementById("collected");
     const emptyTreasure = collectedSpan.querySelector('img[src="/img/pokeball-empty.png"]');

@@ -45,8 +45,18 @@ export class Enemy {
       return;
     }
     const currentCell = this.board.grid[y][x];
-    console.log(currentCell);
-    console.log("enemy probeert te bewegen");
+
+    //player verliest leven
+    if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "player") {
+      const livesSpan = document.getElementById("lives");
+
+      if (livesSpan.lastChild) {
+        livesSpan.removeChild(livesSpan.lastChild);
+      }
+
+      return;
+    }
+
     // muur + treasure
     if (currentCell === null) {
       //enemy moving
