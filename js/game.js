@@ -1,5 +1,6 @@
 "use strict";
 import {Player} from "./player.js";
+import {Enemy} from "./enemy.js";
 
 const notFoundDiv = document.getElementById("notFound");
 const mainContainer = document.querySelector(".main-container");
@@ -160,5 +161,6 @@ Daarom kreeg ik in player.js geen this.position.
 async function startGame() {
   await readData(); //wacht tot json geladen is
   const player = new Player(board);
+  const enemy = new Enemy(board);
 }
 startGame();
