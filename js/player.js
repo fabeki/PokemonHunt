@@ -69,6 +69,10 @@ export class Player {
       return;
     }
 
+    if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "enemy") {
+      return;
+    }
+
     //collected treasures tonen
     const collectedSpan = document.getElementById("collected");
     const emptyTreasure = collectedSpan.querySelector('img[src="/img/pokeball-empty.png"]');
