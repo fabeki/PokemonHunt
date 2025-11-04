@@ -32,7 +32,6 @@ export class Player {
     event.preventDefault();
     let x = this.position.x;
     let y = this.position.y;
-    console.log(x, y);
 
     switch (
       event.key // zie property via f12
@@ -59,8 +58,6 @@ export class Player {
 
     const playerData = this.board.grid[this.position.y][this.position.x];
     const currentCell = this.board.grid[y][x];
-    console.log(playerData);
-    console.log(currentCell);
 
     // Kan niet buiten bord
     if (x < 0 || x >= this.board.width || y < 0 || y >= this.board.heigth) {
@@ -76,7 +73,6 @@ export class Player {
     if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "enemy") {
       if (playerData.dataObject.lives && playerData.dataObject.lives > 0) {
         playerData.dataObject.lives--;
-        console.log(playerData.dataObject.lives);
         livesSpan.removeChild(livesSpan.lastChild);
         return;
       }
@@ -85,7 +81,6 @@ export class Player {
 
     //collected treasures tonen
     const collectedSpan = document.getElementById("collected");
-    console.log(collectedSpan);
     const emptyTreasure = collectedSpan.querySelector('img[src="/img/pokeball-empty.png"]');
     if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "treasure") {
       if (emptyTreasure) {
