@@ -192,3 +192,7 @@ main {
 #startBtn:hover {
   background-color: #ffe066;
 }
+
+[hidden] {
+  display: none;
+}

@@ -159,12 +159,26 @@ const player = new Player(board); <-- dit wordt direct uitgevoerd, WACHT NIET op
 Daarom kreeg ik in player.js geen this.position.
 */
 async function startGame() {
-  await readData(); //wacht tot json geladen is
+  document.getElementById("notFound").hidden = true;
+  document.querySelector(".main-container").hidden = false;
+  document.querySelector(".status").hidden = false;
+  document.getElementById("gameEnd").hidden = true;
+
+  await readData();
   const player = new Player(board);
   const enemy = new Enemy(board);
-}
 
+  player.win = () => {
+    document.getElementById("gameEnd").hidden = false;
+    document.getElementById("endMessage").innerText = "Proficiat! Je hebt gewonnen!";
+    document.querySelector(".main-container").hidden = true;
+    document.querySelector(".status").hidden = true;
+  };
+}
 document.getElementById("startBtn").addEventListener("click", () => {
-  document.getElementById("intro").style.display = "none";
+  document.getElementById("intro").hidden = true;
   startGame();
+});
+document.getElementById("restartBtn").addEventListener("click", () => {
+  location.reload(); // ingebouwde methode + object in js pagina refresh
 });
