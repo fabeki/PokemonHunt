@@ -51,6 +51,20 @@ header h2 {
   width: auto;
 }
 
+.header-settings {
+  position: relative;
+}
+
+.btn-settings {
+  background: none;
+  border: none;
+  padding: 1em;
+}
+
+.btn-settings:hover {
+  transform: rotate(50deg);
+}
+
 .header-settings img {
   cursor: pointer;
   max-height: 30px;
@@ -65,17 +79,35 @@ header h2 {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: rgb(162, 228, 243);
-  padding: 1em;
+  right: 0;
+  background-color: rgb(237, 237, 108);
+  border: 3px solid;
+  margin: 0;
+  padding: 0.5em;
   border-radius: 10px;
+  min-width: auto;
 }
 
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  text-shadow: none;
+  color: #102840;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown-content label {
+  margin-right: 20px;
+}
+
+.dropdown-content input[type="checkbox"] {
+  cursor: pointer;
 }
 
 footer {
