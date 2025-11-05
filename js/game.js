@@ -183,3 +183,14 @@ document.getElementById("startBtn").addEventListener("click", () => {
 document.getElementById("restartBtn").addEventListener("click", () => {
   location.reload(); // ingebouwde methode + object in js pagina refresh
 });
+
+// MUZIEK
+const musicBox = document.getElementById("music");
+const musicIfrm = new Audio("/audio/pokemon.mp3");
+musicBox.addEventListener("change", function () {
+  if (this.checked) {
+    musicIfrm.play();
+  } else {
+    musicIfrm.pause();
+  }
+});
