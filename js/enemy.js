@@ -61,6 +61,7 @@ export class Enemy {
       if (!livesSpan.hasChildNodes()) {
         clearInterval(this.interval);
         alert("Game Over. Meowth heeft je te pakken !");
+        location.reload();
         return;
       }
 
