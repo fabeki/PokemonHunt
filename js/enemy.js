@@ -27,6 +27,9 @@ export class Enemy {
       this.moveRandom();
     }, 250);
   }
+  stopMoving() {
+    clearInterval(this.interval);
+  }
 
   moveRandom() {
     const directions = [

@@ -156,7 +156,8 @@ main {
 }
 
 .intro,
-#intro {
+#intro,
+#gameEnd {
   background-color: rgba(0, 0, 0, 0.7);
   border: 3px solid #ffcb08;
   border-radius: 15px;
@@ -167,8 +168,10 @@ main {
   color: #ffcb08;
   box-shadow: 0 0 20px #000;
 }
+
 .intro h3,
-#intro h3 {
+#intro h3,
+#gameEnd h3 {
   margin-top: 0;
   font-size: 2rem;
 }
@@ -178,7 +181,8 @@ main {
   margin-bottom: 1.5em;
 }
 
-#startBtn {
+#startBtn,
+#restartBtn {
   padding: 0.75em 2em;
   font-size: 1.1rem;
   border: none;
@@ -189,7 +193,8 @@ main {
   box-shadow: 0 0 10px #000;
 }
 
-#startBtn:hover {
+#startBtn:hover,
+#restartBtn:hover {
   background-color: #ffe066;
 }
 

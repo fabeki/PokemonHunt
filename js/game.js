@@ -169,6 +169,7 @@ async function startGame() {
   const enemy = new Enemy(board);
 
   player.win = () => {
+    enemy.stopMoving();
     document.getElementById("gameEnd").hidden = false;
     document.getElementById("endMessage").innerText = "Proficiat! Je hebt gewonnen!";
     document.querySelector(".main-container").hidden = true;
