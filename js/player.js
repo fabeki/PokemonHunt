@@ -65,15 +65,15 @@ export class Player {
     }
 
     const collectedSpan = document.getElementById("collected");
-    const emptyTreasure = collectedSpan.querySelector('img[src="/img/pokeball-empty.png"]');
+    const emptyTreasure = collectedSpan.querySelector('img[src="img/pokeball-empty.png"]');
     if (currentCell && typeof currentCell === "object" && currentCell.dataObject.type === "treasure") {
       if (emptyTreasure) {
-        emptyTreasure.src = "/img/pokeball.png";
+        emptyTreasure.src = "img/pokeball.png";
         emptyTreasure.alt = "Pokeball icon";
         emptyTreasure.title = "Pokeball icon created by Those Icons - Flaticon";
       }
 
-      const remainingTreasures = collectedSpan.querySelectorAll('img[src="/img/pokeball-empty.png"]').length;
+      const remainingTreasures = collectedSpan.querySelectorAll('img[src="img/pokeball-empty.png"]').length;
       if (remainingTreasures === 0 && this.win) {
         this.win();
         return;
