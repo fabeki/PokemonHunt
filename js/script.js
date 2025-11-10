@@ -93,7 +93,7 @@ class Board {
           cellDiv.style.backgroundColor = "greenyellow";
         } else if (value === "wall") {
           const img = document.createElement("img");
-          img.src = "../img/wall.png";
+          img.src = "img/wall.png";
           img.alt = "Wall icon";
           img.title = "Brick icon created by Freepik - Flaticon";
           img.classList.add("wall");
@@ -102,7 +102,7 @@ class Board {
         } else if (typeof value === "object") {
           cellDiv.style.backgroundColor = "greenyellow";
           const img = document.createElement("img");
-          img.src = "../img/" + value.dataObject.icon;
+          img.src = "img/" + value.dataObject.icon;
           img.alt = value.dataObject.alt;
           img.title = value.dataObject.title;
           img.classList.add(value.dataObject.type);
@@ -126,7 +126,7 @@ async function readData() {
     const playerData = data.find((object) => object.type === "player");
     for (let i = 0; i < playerData.lives; i++) {
       const img = document.createElement("img");
-      img.src = "../img/game.png";
+      img.src = "img/game.png";
       img.alt = "Health icon";
       img.title = "Game icon created by Roundicons Premium - Flaticon";
       livesSpan.appendChild(img);
@@ -135,7 +135,7 @@ async function readData() {
     const treasuresLength = data.filter((object) => object.type === "treasure");
     treasuresLength.forEach(() => {
       const img = document.createElement("img");
-      img.src = "../img/pokeball-empty.png";
+      img.src = "img/pokeball-empty.png";
       img.alt = "Empty pokeball icon";
       img.title = "Empty pokeball created by Darius Dan - Flaticon";
       collectedSpan.appendChild(img);
@@ -174,7 +174,7 @@ document.getElementById("restartBtn").addEventListener("click", () => {
 });
 
 const musicBox = document.getElementById("music");
-const musicIfrm = new Audio("/audio/pokemon.mp3");
+const musicIfrm = new Audio("audio/pokemon.mp3");
 musicBox.addEventListener("change", function () {
   if (this.checked) {
     musicIfrm.play();
